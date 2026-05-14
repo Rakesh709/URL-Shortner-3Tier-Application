@@ -216,3 +216,15 @@ npm install
 npm run dev
 ```
 Runs on `http://localhost:5173`
+
+
+
+#DB
+
+docker run -d --name url-shortener-db \
+-e POSTGRES_USER=postgres \
+-e POSTGRES_PASSWORD=postgres \
+-e POSTGRES_DB=urlshortener \
+-e TZ=Asia/Kolkata \
+-p 5432:5432 \
+postgres:16
