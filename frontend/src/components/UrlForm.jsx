@@ -30,7 +30,7 @@ export default function UrlForm({ onUrlCreated }) {
   };
 
   const copyToClipboard = () => {
-    const fullUrl = `http://localhost:8080${result.shortUrl}`;
+    const fullUrl = `${window.location.origin}${result.shortUrl}`;
     navigator.clipboard.writeText(fullUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -136,7 +136,7 @@ export default function UrlForm({ onUrlCreated }) {
             <div className="flex-1 flex items-center gap-2 bg-white rounded-lg px-4 py-2 border border-green-200">
               <span className="text-gray-500 text-sm">Short URL:</span>
               <code className="text-indigo-600 font-semibold flex-1 truncate">
-                {`http://localhost:8080${result.shortUrl}`}
+                {`${window.location.origin}${result.shortUrl}`}
               </code>
             </div>
             <button
